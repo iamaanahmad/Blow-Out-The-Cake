@@ -1,0 +1,281 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.screen {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  margin: 0;
+  text-shadow: 0 2px 12px rgba(255, 200, 120, 0.5);
+}
+
+.subtitle {
+  opacity: 0.85;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.hint {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.hint.error {
+  color: #ff8a8a;
+}
+
+/* ---------- Setup screen ---------- */
+
+.setup-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 24px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.setup-form label {
+  text-align: left;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-top: 8px;
+}
+
+.setup-form input[type='text'] {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stepper input[type='number'] {
+  width: 70px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+}
+
+.stepper button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.2rem;
+  background: #ff9ff3;
+  color: #2b0f4c;
+}
+
+.primary-button,
+.secondary-button,
+.text-button {
+  border: none;
+  border-radius: 14px;
+  padding: 14px 22px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #ff6b6b, #feca57);
+  color: #2b0f4c;
+  margin-top: 12px;
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.text-button {
+  background: transparent;
+  color: #fff5f8;
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+.primary-button:disabled,
+.secondary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  align-items: center;
+}
+
+.blow-button {
+  font-size: 1.2rem;
+}
+
+/* ---------- Cake screen ---------- */
+
+.cake {
+  position: relative;
+  width: 260px;
+  margin: 20px auto 10px;
+}
+
+.candle-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -4px;
+}
+
+.candle {
+  position: relative;
+  width: 10px;
+  height: 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.candle-stick {
+  width: 10px;
+  height: 34px;
+  background: repeating-linear-gradient(45deg, #ff6b6b, #ff6b6b 4px, #feca57 4px, #feca57 8px);
+  border-radius: 3px;
+}
+
+.wick {
+  width: 3px;
+  height: 6px;
+  background: #4a3728;
+}
+
+.flame {
+  width: 12px;
+  height: 18px;
+  background: radial-gradient(circle at 50% 30%, #fff6c8, #ffb703 60%, #ff6b00 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: absolute;
+  top: -18px;
+  animation: flicker 0.35s infinite alternate ease-in-out;
+}
+
+@keyframes flicker {
+  from {
+    transform: scale(1) rotate(-2deg);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.12) rotate(2deg);
+    opacity: 0.85;
+  }
+}
+
+.smoke-wisp {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(220, 220, 220, 0.7);
+  position: absolute;
+  top: -10px;
+  animation: smoke-rise 0.9s ease-out forwards;
+}
+
+@keyframes smoke-rise {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(3);
+  }
+}
+
+.cake-top {
+  height: 26px;
+  background: #ffd6e8;
+  border-radius: 50% 50% 8px 8px / 60% 60% 8px 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.cake-middle {
+  height: 40px;
+  background: #ff8fb1;
+  border-radius: 6px;
+}
+
+.cake-base {
+  height: 20px;
+  background: #d6336c;
+  border-radius: 0 0 14px 14px;
+}
+
+/* ---------- Celebration screen ---------- */
+
+.confetti-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.celebration-screen {
+  position: relative;
+  z-index: 2;
+}
+
+.celebration-card {
+  background: linear-gradient(160deg, #4a1a7a, #2b0f4c);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 32px 24px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.card-cake-icon {
+  font-size: 3rem;
+}
+
+.card-date {
+  opacity: 0.8;
+  margin: 4px 0 12px;
+}
+
+.card-wish {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+@media (max-width: 380px) {
+  .cake {
+    width: 220px;
+  }
+}

@@ -2,6 +2,8 @@
 
 Built for the **Kiro Birthday Challenge**: one sentence in, a Kiro Spec out, a working app at the end.
 
+<img src="src/kirobday.png" alt="Kiro Birthday Wish" width="400" />
+
 ## The one sentence
 
 > Build a virtual birthday cake web app where blowing into your microphone snuffs out its candles one by one until a personalized confetti celebration and shareable card appear.
